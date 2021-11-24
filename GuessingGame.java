@@ -42,7 +42,7 @@ final class GuessingGame {
     */
     public static void main(final String[] args) {
         try {
-            final int randomNum = ThreadLocalRandom.current().nextInt(ONE, SIX + ONE);
+            final int randomNum = ThreadLocalRandom.current().nextInt(1, 7);
             // code from https://www.w3schools.com/java/java_user_input.asp
             final Scanner input = new Scanner(System.in);
             // https://www.w3schools.com/java/java_methods_param.asp
@@ -57,13 +57,17 @@ final class GuessingGame {
                     System.out.println("\nCongratulations, you guessed right!");
                     guess = false;
                 } else if (inputInt > SIX || inputInt < ONE) {
-                    System.out.println("\nPlease,insert an integer between 6 and 1.");
+                    System.out.println(
+                        "\nPlease,insert an integer between 6 and 1."
+                    );
                 } else if (inputInt > randomNum) {
                     System.out.println("\nThe number is a little lower.");
                 } else if (inputInt < randomNum) {
                     System.out.println("\nThe number is a little higher.");
                 } else {
-                    System.out.println("\nPlease inseart an integer between 6 and 1.");
+                    System.out.println(
+                        "\nPlease inseart an integer between 6 and 1."
+                    );
                 }
             }
         } catch (java.util.InputMismatchException error) {
